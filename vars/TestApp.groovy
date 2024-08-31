@@ -1,4 +1,4 @@
-#!user/bin groovy
+#!usr/bin/env groovy
 def call(){
     echo 'Running tests...'
 // run test script
