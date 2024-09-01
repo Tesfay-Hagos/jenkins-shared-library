@@ -1,5 +1,5 @@
 #!usr/bin/env groovy
-package com.docker
+package com
 
 class Docker {
 
