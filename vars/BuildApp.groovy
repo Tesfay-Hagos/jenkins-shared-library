@@ -1,10 +1,7 @@
 #!usr/bin/env groovy
+import com.docker.Docker
+
 //def call(String imageName,String version,String dockerfilePath){
-def call(String imageName, String version,String dockerfilePath) {
-    if (params.Version == '') {
-        error('Version parameter is required')
-    } else {
-        echo 'Building docker image...'
-        sh "docker build -t ${imageName}:${version} -f ./${dockerfilePath} ."
-    }
+def call(String imageName, String version, String dockerfilePath) {
+    return new Docker(this).buildDockerImage(imageName, version, dockerfilePath)
 }
