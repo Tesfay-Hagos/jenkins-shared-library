@@ -28,7 +28,10 @@ class Docker {
         }
     }
 
-    def dockerPush(String imageName, String version) {
+    def dockerPush(String imageName, String version, String server) {
+        if (server == '') {
+            server = 'https://index.docker.io/v1/'
+        }
         script.echo "Pushing to ${server}"
         script.sh "docker push ${imageName}:${version}"
     }
